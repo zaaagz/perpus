@@ -1,7 +1,7 @@
 <h1 class="mt-4">Buku</h1>
 <div class="row">
     <div class="col-md-12">
-        <a href="?page=buku_tambah" class="btn btn-primary">+ Tambah Buku</a>
+        <a href="?page=buku_tambah" class="btn btn-primary"> Tambah Buku</a>
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <tr>
                 <th>No</th>

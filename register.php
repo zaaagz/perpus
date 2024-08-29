@@ -13,7 +13,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-">
+    <body class="bg-secondary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -30,9 +30,10 @@
                                                 $alamat = $_POST['alamat'];
                                                 $no_telepon = $_POST['no_telepon'];
                                                 $username = $_POST['username'];
+                                                $level = $_POST['level'];
                                                 $password = md5($_POST['password']);
 
-                                                $insert = mysqli_query($koneksi, "INSERT INTO user(nama,email,alamat,no_telepon,username,password) VALUES('$nama','$email','$alamat','$no_telepon','$username','$password')");
+                                                $insert = mysqli_query($koneksi, "INSERT INTO user(nama,email,alamat,no_telepon,username,password,level) VALUES('$nama','$email','$alamat','$no_telepon','$username','$password','$level')");
 
                                                 if($insert){
                                                     echo '<script>alert("selamat, register berhasil. silahkan login"); location.href="login.php";</script>';
@@ -65,6 +66,12 @@
                                             <div class="form-group">
                                                 <label for="inputPassword">Password</label>
                                                 <input class="form-control" id="inputPassword" required name="password" type="password" placeholder="Masukan Password" />
+                                            </div>
+                                            <div class="from-group">
+                                                 <label class="small mb-1">Level</label>
+                                                 <select name="level" class="form-select ">
+                                                    <option value="peminjam">peminjam</option>
+                                                 </select>   
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary" type="submit" name="register" value="register">register</button>
